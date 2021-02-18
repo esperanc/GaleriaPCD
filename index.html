@@ -1,0 +1,47 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Community Day Brasil - 2021 - Galeria</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@900&family=Recursive:wght@400;700&family=Tomorrow:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="site">
+        <div class="conteudo-wrapper">
+            <header>
+                <div class="logo">
+                </div>
+                <div class="data">Galeria</div>
+            </header>
+            <div class="galeria">
+                <script type="text/javascript">
+                //
+                // Override notebook defaults
+                //
+                defWidth = 800;
+                defHeight = 800;
+                defCameraAngle = 90;
+           		defDecimateRatio = 0.1;
+
+                </script>
+                <div id="mainContainer">
+                    <div id="observablehq-mainFrame-88038473"></div>
+                    <div id="observablehq-viewof-collection-88038473"></div>
+                    <div id="observablehq-viewof-crumbs-88038473"></div>
+                </div>
+                <script type="module">
+                    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+					import define from "https://api.observablehq.com/d/be015cf1e2c55108.js?v=3";
+					new Runtime().module(define, name => {
+					  if (name === "mainFrame") return new Inspector(document.querySelector("#observablehq-mainFrame-88038473"));
+					  if (name === "viewof collection") return new Inspector(document.querySelector("#observablehq-viewof-collection-88038473"));
+					  if (name === "viewof crumbs") return new Inspector(document.querySelector("#observablehq-viewof-crumbs-88038473"));					  
+					  return ["interaction","artworkSearch","paintingInfo","buttons","labSize","camera","artworkTable","paintings","labyrinth","start","paintingGroup","decimate","hangingPoints","cubes","scene","breadCrumbs"].includes(name);
+					});
+				</script>
+            </div>
+        </div>
+    </div>
+</body>
