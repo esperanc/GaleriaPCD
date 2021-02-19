@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
+<!-- Libraries to load csv -->
+<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
+<script src="https://d3js.org/d3-fetch.v2.min.js"></script>
+
 <body>
     <div class="site">
         <div class="conteudo-wrapper">
@@ -16,32 +20,48 @@
                 <div class="data">Galeria</div>
             </header>
             <div class="galeria">
-                <script type="text/javascript">
-                //
-                // Override notebook defaults
-                //
-                defWidth = 800;
-                defHeight = 600;
-                defCameraAngle = 90;
-           		defDecimateRatio = 0.5;
-
-                </script>
                 <div id="mainContainer">
                     <div id="observablehq-mainFrame-88038473"></div>
                     <div id="observablehq-viewof-collection-88038473"></div>
                     <div id="observablehq-viewof-crumbs-88038473"></div>
                 </div>
-                <script type="module">
-                    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-					import define from "https://api.observablehq.com/d/be015cf1e2c55108.js?v=3";
-					new Runtime().module(define, name => {
-					  if (name === "mainFrame") return new Inspector(document.querySelector("#observablehq-mainFrame-88038473"));
-					  if (name === "viewof collection") return new Inspector(document.querySelector("#observablehq-viewof-collection-88038473"));
-					  if (name === "viewof crumbs") return new Inspector(document.querySelector("#observablehq-viewof-crumbs-88038473"));					  
-					  return ["interaction","artworkSearch","paintingInfo","buttons","labSize","camera","artworkTable","paintings","labyrinth","start","paintingGroup","decimate","hangingPoints","cubes","scene","breadCrumbs"].includes(name);
-					});
-				</script>
             </div>
         </div>
     </div>
+    <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/be015cf1e2c55108.js?v=3";
+        function main() {
+            new Runtime().module(define, name => {
+              if (name === "mainFrame") return new Inspector(document.querySelector("#observablehq-mainFrame-88038473"));
+              if (name === "viewof collection") return new Inspector(document.querySelector("#observablehq-viewof-collection-88038473"));
+              if (name === "viewof crumbs") return new Inspector(document.querySelector("#observablehq-viewof-crumbs-88038473"));                     
+              return ["interaction","artworkSearch","paintingInfo","buttons","labSize","camera","artworkTable","paintings","labyrinth","start","paintingGroup","decimate","hangingPoints","cubes","scene","breadCrumbs"].includes(name);
+            })
+        }
+        //
+        // Override notebook defaults
+        //
+        window.defWidth = 800;
+        window.defHeight = 600;
+        window.defCameraAngle = 90;
+        window.defDecimateRatio = 0.5;
+
+        //
+        // Asynchronously load gallery data
+        //
+        var promises = [
+            d3.csv("data/tate_modern.csv"),
+            d3.csv("data/p5showcase.csv"),
+        ];
+
+        Promise.all (promises).then(data => {
+          window.defCollections = [
+             { name: "Tate Modern", info: data[0], size: 4 },
+             { name: "P5 showcase (2020)", info: data[1], size: [10,6] }
+             ];
+          main()
+        });
+
+    </script>
 </body>
