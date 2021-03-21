@@ -6,67 +6,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@900&family=Recursive:wght@400;700&family=Tomorrow:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
+<div id="observablehq-mainDisplay-4eb9388b" style="overflow:hidden;"></div>
+<div id="observablehq-setDefaultLabyrinth-4eb9388b" style="display:none"></div>
 
-<!-- Libraries to load csv -->
-<script src="https://d3js.org/d3-dsv.v2.min.js"></script>
-<script src="https://d3js.org/d3-fetch.v2.min.js"></script>
-
-<body>
-    <div class="site">
-        <div class="conteudo-wrapper">
-            <header>
-                <div class="logo">
-                </div>
-                <div class="data">Galeria</div>
-            </header>
-            <div class="galeria">
-                <div id="mainContainer">
-                    <div id="observablehq-mainFrame-88038473"></div>
-                    <div id="observablehq-viewof-collection-88038473"></div>
-                    <div id="observablehq-viewof-crumbs-88038473"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script type="module">
-        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-        import define from "https://api.observablehq.com/d/755fe37cfd7cabe5.js?v=3";
-        function main() {
-            new Runtime().module(define, name => {
-              if (name === "mainFrame") return new Inspector(document.querySelector("#observablehq-mainFrame-88038473"));
-              if (name === "viewof collection") return new Inspector(document.querySelector("#observablehq-viewof-collection-88038473"));
-              if (name === "viewof crumbs") return new Inspector(document.querySelector("#observablehq-viewof-crumbs-88038473"));                     
-              return ["interaction","artworkSearch","paintingInfo","buttons","labSize","camera","artworkTable","paintings","labyrinth","start","paintingGroup","decimate","hangingPoints","cubes","scene","breadCrumbs"].includes(name);
-            })
-        }
-        //
-        // Override notebook defaults
-        //
-        window.defWidth = 800;
-        window.defHeight = 600;
-        //window.defCameraAngle = 90;
-        window.defDecimateRatio = 0.5;
-        window.defButtonSizeRatio = 0.07;
-        //window.defPaintingSizeRatio = 0.9;
-        //window.defRemoveCeiling = false;
-        //window.defButtonIcons = { left: '⇦',  up: '⇧',  right: '⇨',   walk: '🚶', fly: '🚁'};
-        window.defCubemapUrls = ["images/grid.png","images/grid.png","images/grid.png","images/grid.png","images/grid.png","images/grid.png"];
-
-        //
-        // Asynchronously load gallery data
-        //
-        var promises = [
-            d3.csv("data/tate_modern.csv"),
-            d3.csv("data/p5showcase.csv"),
-        ];
-
-        Promise.all (promises).then(data => {
-          window.defCollections = [
-             { name: "Tate Modern", info: data[0], size: 4 },
-             { name: "P5 showcase (2020)", info: data[1], size: [10,6] }
-             ];
-          main()
-        });
-
-    </script>
-</body>
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/d/180dadd4800ef176.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "mainDisplay") return new Inspector(document.querySelector("#observablehq-mainDisplay-4eb9388b"));
+  if (name === "setDefaultLabyrinth") return new Inspector(document.querySelector("#observablehq-setDefaultLabyrinth-4eb9388b"));
+});
+</script>
