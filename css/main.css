@@ -3,7 +3,6 @@
 }
 
 :root {
-  --font-fraunces: 'Fraunces', serif;
   --font-tomorrow: 'Tomorrow', sans-serif;
   --font-recursive: 'Recursive', sans-serif;
   --cor-azul: #004aa3;
@@ -12,9 +11,7 @@
 }
 
 body {
-  font-size: 1.2rem;
   font-family: var(--font-recursive);
-  background-color: var(--cor-cinza);
   color: var(--cor-azul)
 }
 
@@ -24,135 +21,103 @@ body {
   box-sizing: border-box;
 }
 
-/*canvas {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}*/
-
-.site {
-  padding: 10vh 2rem;
-}
-
-.conteudo-wrapper {
-  margin: 0 auto 0 auto;
-  max-width: 800px;
-  background-color: var(--cor-cinza);
-}
-
-header,
-section {
-  padding: 3rem;
-}
-
-header {
-  background-color: var(--cor-azul);
-  color: var(--cor-vermelho);
+.placa {
+  padding: 5px 8px;
   text-align: center;
-}
-
-ul {
-  list-style: square;
-}
-
-.logo svg {
-  width: 100%;
-  margin-bottom: 2rem;
-  fill: var(--cor-vermelho);
-}
-
-.data {
-  text-transform: uppercase;
-  font-size: 2.2rem;
-  
-  font-weight: 700;
-}
-
-.olho {
-  font-family: var(--font-fraunces);
-  text-transform: uppercase;
-  font-size: 2.5rem;
-  line-height: 1.1em;
-  color: var(--cor-vermelho);
-  margin-top: 5rem;
-}
-
-.chamada p {
-  margin-bottom: 2rem;
-}
-
-.cta {
-  text-align: center;
-}
-
-.botao {
-  font-family: var(--font-tomorrow);
-  font-size: 1.3rem;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: normal;
-  color: var(--cor-cinza);
+  background-color: #e6e6d8;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 5px 10px rgba(3, 3, 46, 0.5);
   display: inline-block;
-  padding: 0.6em 2em;
-  background-color: var(--cor-vermelho);
-  border-radius: 0.2rem;
-  transition: background-color.3s ease-in-out;
-  width: 100%;
+  font-size: 1rem;
 }
 
-.botao:hover,
-.botao:focus {
-  box-shadow: inset 0px 5rem 0 0 var(--cor-azul);
-  background-color: var(--cor-azul);
-}
-
-h1 { 
-  font-family: 'Fraunces', serif;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  color: var(--cor-vermelho);
-  margin-bottom: 2rem;
-}
-
-ul {
-  padding-left: 1rem;
-  margin-bottom: 2rem;
-}
-
-li {
-  margin-bottom: 1rem;
-}
-
-a {
+.placa a {
+  text-decoration: none;
   color: #004aa3;
 }
 
-
-footer {
-  padding: 2rem;
-  background-color: var(--cor-vermelho);
+.placa .titulo {
   text-transform: uppercase;
-  text-align: center;
-  font-family: var(--font-tomorrow);
+  font-family: 'Tomorrow', sans-serif;
+  color: #ff666c;
 }
 
-/*MOBILE*/
+.placa .icone-visualizar {
+  position: relative;
+  bottom: -3px;
+}
 
-@media (max-width:600px)  {
-  .olho,
-  .data {
-    font-size: 1.7rem; 
+@media screen and (min-width: 600px) {
+  .placa .titulo {
+    display: block;
   }
+}
 
-  body {
-    font-size: 1rem;
-  }
+.painel {
+  background-color: #ff666c;
+  padding: 16px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80%;
+  overflow-y: scroll;
+  margin: 0 auto;
+  text-align: left;
+  box-shadow: 0 5px 10px rgba(3, 3, 46, 0.5);
+}
 
-  header,
-  section {
-    padding: 2rem;
-  }
+.painel .topbar {
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.painel .fechar {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.painel header {
+  margin-bottom: 8px;
+}
+
+.painel .infos {
+  margin-bottom: 8px;
+}
+
+.painel .titulo {
+  text-transform: uppercase;
+  font-family: 'Tomorrow', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: #e6e6d8;
+  margin-bottom: 4px;
+}
+
+.painel .autoria {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.painel .cta {
+  margin: 16px 0;
+  padding: 0.6em 0;
+}
+
+.painel .botao {
+  font-family: 'Tomorrow', sans-serif;
+  line-height: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #e6e6d8;
+  display: inline;
+  padding: 0.6em 2em;
+  background-color: #004aa3;
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+.painel p {
+  margin-bottom: 8px;
 }
