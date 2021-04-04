@@ -1,3 +1,6 @@
+<!-- 
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,5 +18,18 @@ import define from "https://api.observablehq.com/d/180dadd4800ef176.js?v=3";
 new Runtime().module(define, name => {
   if (name === "mainDisplay") return new Inspector(document.querySelector("#observablehq-mainDisplay-4eb9388b"));
   if (name === "setDefaultLabyrinth") return new Inspector(document.querySelector("#observablehq-setDefaultLabyrinth-4eb9388b"));
+});
+</script> -->
+
+<div id="observablehq-mainDisplay-07ab9e49"></div>
+<div id="observablehq-styles-07ab9e49"></div>
+<p>Credit: <a href="https://observablehq.com/d/180dadd4800ef176">PCD gallery with authoring tools by Claudio Esperança</a></p>
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/d/180dadd4800ef176.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "mainDisplay") return new Inspector(document.querySelector("#observablehq-mainDisplay-07ab9e49"));
+  if (name === "styles") return new Inspector(document.querySelector("#observablehq-styles-07ab9e49"));
 });
 </script>
