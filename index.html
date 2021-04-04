@@ -20,16 +20,18 @@ new Runtime().module(define, name => {
   if (name === "setDefaultLabyrinth") return new Inspector(document.querySelector("#observablehq-setDefaultLabyrinth-4eb9388b"));
 });
 </script> -->
-
-<div id="observablehq-mainDisplay-07ab9e49"></div>
-<div id="observablehq-styles-07ab9e49"></div>
-<p>Credit: <a href="https://observablehq.com/d/180dadd4800ef176">PCD gallery with authoring tools by Claudio Esperança</a></p>
+<div id="observablehq-mainDisplay-b9437cc7" style="overflow:hidden;"></div>
+<div id="observablehq-assignButtonCallbacks-b9437cc7" style="display:none"></div>
+<div id="observablehq-styles-b9437cc7" style="display:none"></div>
+<div id="observablehq-setDefaultLabyrinth-b9437cc7" style="display:none"></div>
 
 <script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
 import define from "https://api.observablehq.com/d/180dadd4800ef176.js?v=3";
 new Runtime().module(define, name => {
-  if (name === "mainDisplay") return new Inspector(document.querySelector("#observablehq-mainDisplay-07ab9e49"));
-  if (name === "styles") return new Inspector(document.querySelector("#observablehq-styles-07ab9e49"));
+  if (name === "mainDisplay") return new Inspector(document.querySelector("#observablehq-mainDisplay-b9437cc7"));
+  if (name === "assignButtonCallbacks") return new Inspector(document.querySelector("#observablehq-assignButtonCallbacks-b9437cc7"));
+  if (name === "styles") return new Inspector(document.querySelector("#observablehq-styles-b9437cc7"));
+  if (name === "setDefaultLabyrinth") return new Inspector(document.querySelector("#observablehq-setDefaultLabyrinth-b9437cc7"));
 });
 </script>
