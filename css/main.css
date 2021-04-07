@@ -30,6 +30,7 @@ body {
   box-shadow: 0 5px 10px rgba(3, 3, 46, 0.5);
   display: inline-block;
   font-size: 1rem;
+  margin: 10px
 }
 
 .placa a {
@@ -60,7 +61,7 @@ body {
   width: 90%;
   max-width: 600px;
   max-height: 80%;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin: 0 auto;
   text-align: left;
   box-shadow: 0 5px 10px rgba(3, 3, 46, 0.5);
